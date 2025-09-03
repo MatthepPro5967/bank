@@ -50,7 +50,7 @@ export const ITEMS = [
 ];
 
 export const topCategoryStyles = {
-  "Food and Drink": {
+  "Food And Drink": {
     bg: "bg-blue-25",
     circleBg: "bg-blue-100",
     text: {
@@ -63,7 +63,46 @@ export const topCategoryStyles = {
     },
     icon: "/icons/monitor.svg",
   },
+  "General Merchandise": {
+    bg: "bg-orange-25",
+    circleBg: "bg-orange-100",
+    text: {
+      main: "text-orange-900",
+      count: "text-orange-700",
+    },
+    progress: {
+      bg: "bg-orange-100",
+      indicator: "bg-orange-700",
+    },
+    icon: "/icons/dollar.svg",
+  },
+  Income: {
+    bg: "bg-purple-25",
+    circleBg: "bg-purple-100",
+    text: {
+      main: "text-purple-900",
+      count: "text-purple-700",
+    },
+    progress: {
+      bg: "bg-purple-100",
+      indicator: "bg-purple-700",
+    },
+    icon: "/icons/money-send.svg",
+  },
   Travel: {
+    bg: "bg-success-25",
+    circleBg: "bg-success-100",
+    text: {
+      main: "text-success-900",
+      count: "text-success-700",
+    },
+    progress: {
+      bg: "bg-success-100",
+      indicator: "bg-success-700",
+    },
+    icon: "/icons/coins.svg",
+  },
+    Transportation: {
     bg: "bg-success-25",
     circleBg: "bg-success-100",
     text: {
