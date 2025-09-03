@@ -168,31 +168,6 @@ export const createLinkToken = async (user: User) => {
 }
 
 
-/*
-export const createLinkToken = async (user: User) => {
-    try {
-        const tokenParams = {
-            user: {
-                client_user_id: user.$id,
-            },
-            client_name: `${user.firstName} ${user.lastName}`,
-            products: ['auth'] as Products[],
-            additional_consented_products: ['transactions'] as Products[],
-            language: 'en',
-            country_codes: ['US'] as CountryCode[],
-        }
-
-        const response = await plaidClient.linkTokenCreate(tokenParams);
-
-        return parseStringify({ linkToken: response.data.link_token})
-
-    } catch (error) {
-        console.log(error);
-    }
-}
-    */
-
-
 export const createBankAccount = async ({
     userId,
     bankId,
@@ -314,6 +289,24 @@ export const getBank = async ( { documentId }: getBankProps) => {
             [Query.equal('$id', [documentId])]
         )
 
+        return parseStringify(bank.documents[0]);
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+export const getBankByAccountId = async ( { accountId }: getBankByAccountIdProps) => {
+    try {
+        const { database } = await createAdminClient();
+        const bank = await database.listDocuments(
+            DATABASE_ID!,
+            BANK_COLLECTION_ID!,
+            [Query.equal('accountId', [accountId])]
+        )
+
+        if(bank.total !== 1) return null
         return parseStringify(bank.documents[0]);
 
     } catch (error) {

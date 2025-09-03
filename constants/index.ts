@@ -92,7 +92,7 @@ export const topCategoryStyles = {
 };
 
 export const transactionCategoryStyles = {
-  "Food and Drink": {
+  "Food And Drink": {
     borderColor: "border-pink-600",
     backgroundColor: "bg-pink-500",
     textColor: "text-pink-700",
@@ -127,6 +127,37 @@ export const transactionCategoryStyles = {
     backgroundColor: "bg-[#12B76A]",
     textColor: "text-[#027A48]",
     chipBackgroundColor: "bg-[#ECFDF3]",
+  },
+  
+  Travel: {
+    borderColor: "border-[#0047AB]",
+    backgroundColor: "bg-blue-500",
+    textColor: "text-blue-700",
+    chipBackgroundColor: "bg-inherit",
+  },
+  Transportation: {
+    borderColor: "border-[#0047AB]",
+    backgroundColor: "bg-blue-500",
+    textColor: "text-blue-700",
+    chipBackgroundColor: "bg-inherit",
+  },
+  "Loan Payments": {
+    borderColor: "border-yellow-700",
+    backgroundColor: "bg-yellow-700",
+    textColor: "text-yellow-700",
+    chipBackgroundColor: "bg-inherit",
+  },
+  Income: {
+    borderColor: "border-purple-700",
+    backgroundColor: "bg-purple-700",
+    textColor: "text-pruple-700",
+    chipBackgroundColor: "bg-inherit",
+  },
+  "General Merchandise": {
+    borderColor: "border-orange-700",
+    backgroundColor: "bg-orange-700",
+    textColor: "text-orange-700",
+    chipBackgroundColor: "bg-inherit",
   },
   default: {
     borderColor: "",

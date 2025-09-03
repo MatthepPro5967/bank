@@ -79,7 +79,6 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
     const transferTransactionsData = await getTransactionsByBankId({
       bankId: bank.$id,
     });
-
     const transferTransactions = transferTransactionsData.documents.map(
       (transferData: Transaction) => ({
         id: transferData.$id,
@@ -101,6 +100,9 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
       accessToken: bank?.accessToken,
     });
 
+    console.log("Mapped transactions:", transactions); // <-- Print here
+
+
     const account = {
       id: accountData.account_id,
       availableBalance: accountData.balances.available!,
@@ -116,6 +118,7 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
 
     // sort transactions by date such that the most recent transaction is first
     const allTransactions = [...transactions, ...transferTransactions].sort(
+      
       (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
     );
 
@@ -170,7 +173,7 @@ export const getTransactions = async ({
         accountId: transaction.account_id,
         amount: transaction.amount,
         pending: transaction.pending,
-        category: transaction.category ? transaction.category[0] : "",
+        category: transaction.personal_finance_category?.primary || "",
         date: transaction.date,
         image: transaction.logo_url,
       }));
