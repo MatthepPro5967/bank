@@ -17,7 +17,7 @@ const Sidebar = ( { user }: SiderbarProps) => {
             <Link href="/"
             className="mb-12 cursor-pointer flex items-center gap-2">
                 <Image 
-                    src="/icons/logo.svg"
+                    src="/icons/logo.png"
                     width={34}
                     height={34}
                     alt="Logo"
@@ -33,7 +33,7 @@ const Sidebar = ( { user }: SiderbarProps) => {
 
             return (
                 <Link href={item.route} key={item.label}
-                className={cn('sidebar-link', {'bg-bank-gradient': isActive })}>
+                className={cn('sidebar-link', {'bg-green-500': isActive })}>
                     <div className="relative size-6">
                         <Image 
                             src={item.imgURL}

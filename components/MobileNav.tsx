@@ -35,7 +35,7 @@ const MobileNav = ( { user }: MobileNavProps ) => {
             <Link href="/"
             className="mb-12 cursor-pointer flex items-center gap-1 px-4">
                 <Image 
-                    src="/icons/logo.svg"
+                    src="/icons/logo.png"
                     width={34}
                     height={34}
                     alt="Logo"
@@ -51,7 +51,7 @@ const MobileNav = ( { user }: MobileNavProps ) => {
                         return (
                             <SheetClose asChild key={item.route}>
                                 <Link href={item.route} key={item.label}
-                                    className={cn('mobilenav-sheet_close w-full', {'bg-bank-gradient': isActive })}>
+                                    className={cn('mobilenav-sheet_close w-full', {'bg-green-500': isActive })}>
                                             <Image 
                                                 src={item.imgURL}
                                                 alt={item.label}

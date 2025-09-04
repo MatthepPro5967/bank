@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "MS Banking",
   description: "Mordern banking platform",
   icons: {
-    icon: '/icons/logo.svg'
+    icon: '/icons/logo.png'
   }
 };
 
